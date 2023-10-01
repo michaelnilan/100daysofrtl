@@ -1,7 +1,7 @@
 module top_module_tb;
 reg A, B;
 wire Y;
-top_module Indtance0 (Y, A, B);
+top_module DUT0 (Y, A, B);
 initial begin
     A = 0; B = 0;
  #1 A = 0; B = 1;
