@@ -2,6 +2,7 @@
 
 ## Toolchain:
 yosys: For synthesis
+
 iverilog: For simulation
 
 Adapted from [https://github.com/raulbehl/100DaysOfRTL]
