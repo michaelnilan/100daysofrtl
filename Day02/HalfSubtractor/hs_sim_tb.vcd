@@ -1,0 +1,43 @@
+$date
+	Mon Oct  2 22:30:45 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module sub_tb $end
+$var wire 1 ! Diff $end
+$var wire 1 " Borr $end
+$var reg 1 # A $end
+$var reg 1 $ B $end
+$scope module INST0 $end
+$var wire 1 # A $end
+$var wire 1 $ B $end
+$var wire 1 " Borr $end
+$var wire 1 ! Diff $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0$
+0#
+0"
+0!
+$end
+#1
+1!
+1"
+1$
+#2
+0"
+0$
+1#
+#3
+0!
+1$
+#4
+0$
+0#
