@@ -1,0 +1,75 @@
+#! /usr/bin/vvp
+:ivl_version "10.3 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x563c1a69fa70 .scope module, "xor_m_tb" "xor_m_tb" 2 1;
+ .timescale 0 0;
+v0x563c1a6b2f40_0 .var "A", 0 0;
+v0x563c1a6b3030_0 .var "B", 0 0;
+v0x563c1a6b3140_0 .net "out", 0 0, L_0x563c1a6b3230;  1 drivers
+S_0x563c1a69fbf0 .scope module, "INST0" "xor_m" 2 5, 3 3 0, S_0x563c1a69fa70;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "out"
+    .port_info 1 /INPUT 1 "A"
+    .port_info 2 /INPUT 1 "B"
+L_0x563c1a6b32d0 .functor NOT 1, v0x563c1a6b2f40_0, C4<0>, C4<0>, C4<0>;
+v0x563c1a6b2cb0_0 .net "A", 0 0, v0x563c1a6b2f40_0;  1 drivers
+v0x563c1a6b2d70_0 .net "B", 0 0, v0x563c1a6b3030_0;  1 drivers
+v0x563c1a6b2e40_0 .net "out", 0 0, L_0x563c1a6b3230;  alias, 1 drivers
+S_0x563c1a6a0a50 .scope module, "MUX1" "mux2_1" 3 5, 4 1 0, S_0x563c1a69fbf0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "out"
+    .port_info 1 /INPUT 1 "A"
+    .port_info 2 /INPUT 1 "B"
+    .port_info 3 /INPUT 1 "sel"
+v0x563c1a6a0c90_0 .net "A", 0 0, v0x563c1a6b2f40_0;  alias, 1 drivers
+v0x563c1a6b2a10_0 .net "B", 0 0, L_0x563c1a6b32d0;  1 drivers
+v0x563c1a6b2ad0_0 .net "out", 0 0, L_0x563c1a6b3230;  alias, 1 drivers
+v0x563c1a6b2b70_0 .net "sel", 0 0, v0x563c1a6b3030_0;  alias, 1 drivers
+L_0x563c1a6b3230 .functor MUXZ 1, L_0x563c1a6b32d0, v0x563c1a6b2f40_0, v0x563c1a6b3030_0, C4<>;
+    .scope S_0x563c1a69fa70;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x563c1a6b2f40_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x563c1a6b3030_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x563c1a6b2f40_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x563c1a6b3030_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x563c1a6b2f40_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x563c1a6b3030_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x563c1a6b2f40_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x563c1a6b3030_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x563c1a6b2f40_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x563c1a6b3030_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_0x563c1a69fa70;
+T_1 ;
+    %vpi_call 2 16 "$monitor", "Input: A =%d | B = %d,Output: out=%d", v0x563c1a6b2f40_0, v0x563c1a6b3030_0, v0x563c1a6b3140_0 {0 0 0};
+    %vpi_call 2 17 "$dumpfile", "xor_m_sim.vcd" {0 0 0};
+    %vpi_call 2 18 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x563c1a69fa70 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "xor_m_tb.v";
+    "xor_m.v";
+    "./../MUX2_1/mux2_1.v";
