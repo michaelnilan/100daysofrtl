@@ -1,0 +1,83 @@
+$date
+	Thu Oct  5 23:42:12 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module seg7_tb $end
+$var wire 7 ! num [6:0] $end
+$var reg 4 " bcd [3:0] $end
+$var integer 32 # i [31:0] $end
+$scope module INST0 $end
+$var wire 4 $ bcd [3:0] $end
+$var reg 7 % num [6:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1000000 %
+b0 $
+b0 #
+b0 "
+b1000000 !
+$end
+#10
+b1111001 !
+b1111001 %
+b1 "
+b1 $
+b1 #
+#20
+b100100 !
+b100100 %
+b10 "
+b10 $
+b10 #
+#30
+b110000 !
+b110000 %
+b11 "
+b11 $
+b11 #
+#40
+b11001 !
+b11001 %
+b100 "
+b100 $
+b100 #
+#50
+b10010 !
+b10010 %
+b101 "
+b101 $
+b101 #
+#60
+b10 !
+b10 %
+b110 "
+b110 $
+b110 #
+#70
+b1111000 !
+b1111000 %
+b111 "
+b111 $
+b111 #
+#80
+b0 !
+b0 %
+b1000 "
+b1000 $
+b1000 #
+#90
+b100 !
+b100 %
+b1001 "
+b1001 $
+b1001 #
+#100
+b1010 #
