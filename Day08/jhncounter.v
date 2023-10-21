@@ -6,7 +6,7 @@ always @(posedge clk or posedge rst) begin
     count <= 1;
   else
   begin
-    count <= {count[2:0],count[3]};
+    count <= {~count[0],count[2:1]};
   end
 end
 
