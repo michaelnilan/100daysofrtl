@@ -8,14 +8,12 @@ reg [DATA_WIDTH-1:0] temp; // Temporary internal register
 
 
 always@(posedge clk or negedge rstn) begin
-  if(!rstn) begin
-    temp <= 16'b0;
-  end
-  else if((CS_b == 0) && (WE_b == 0) && (OE_b == 1)) // Write operation
-      ram[addr] <= data; 
+  if((CS_b == 0) && (WE_b == 0) && (OE_b == 1)) // Write operation
+      ram[addr] = data; 
   else if((CS_b == 0) && (WE_b == 1) && (OE_b == 0)) // Read operation
-      temp <= ram[addr];
+      temp = ram[addr];
 end
+
 
 assign data = ((CS_b == 0) && (WE_b == 1) && (OE_b == 0)) ? temp : 1'bz;
 
